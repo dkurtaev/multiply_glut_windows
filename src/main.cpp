@@ -7,7 +7,6 @@ void reshape(int width, int height);
 int main(int argc, char** argv) {
   // GLUT initialization.
   glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 
   // Window initialization.
   glutInitWindowSize(324, 324);  // Width, height of window.
@@ -19,6 +18,7 @@ int main(int argc, char** argv) {
   glutIdleFunc(display);
   glutReshapeFunc(reshape);
 
+  // Start GLUT's internal loop. Exit by window closing.
   glutMainLoop();
   return 0;
 }
