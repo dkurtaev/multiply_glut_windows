@@ -1,6 +1,5 @@
 #include <GL/freeglut.h>
 
-void init();
 void display();
 void reshape(int width, int height);
 
@@ -21,10 +20,6 @@ int main(int argc, char** argv) {
   // Start GLUT's internal loop. Exit by window closing.
   glutMainLoop();
   return 0;
-}
-
-void init() {
-  glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
 void display() {
