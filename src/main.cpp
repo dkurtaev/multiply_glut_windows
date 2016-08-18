@@ -1,15 +1,7 @@
 #include <GL/freeglut.h>
 
-static const unsigned kInitViewWidth = 324;
-static const unsigned kInitViewHeight = 324;
-static const unsigned kInitViewPositionX = 0;
-static const unsigned kInitViewPositionY = 0;
-static const char* kViewTitle = "Single view";
-
 void init();
-
 void display();
-
 void reshape(int width, int height);
 
 int main(int argc, char** argv) {
@@ -18,9 +10,9 @@ int main(int argc, char** argv) {
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 
   // Window initialization.
-  glutInitWindowSize(kInitViewWidth, kInitViewHeight);
-  glutInitWindowPosition(kInitViewPositionX, kInitViewPositionY);
-  int window_id = glutCreateWindow(kViewTitle);
+  glutInitWindowSize(324, 324);  // Width, height of window.
+  glutInitWindowPosition(0, 0);  // (x, y) position of window from top-left.
+  int window_id = glutCreateWindow("Single view");
 
   // Set callbacks.
   glutDisplayFunc(display);
