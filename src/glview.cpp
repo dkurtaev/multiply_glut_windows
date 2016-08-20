@@ -13,7 +13,7 @@ GLView::GLView(const char* title) {
   int window_id = glutCreateWindow(title);
 
   // Set callbacks.
-  glutIdleFunc(display);
+  glutDisplayFunc(display);
   glutReshapeFunc(reshape);
 }
 
