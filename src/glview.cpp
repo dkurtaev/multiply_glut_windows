@@ -8,9 +8,8 @@ std::vector<GLView*> GLView::glviews;
 
 GLView::GLView(const char* title) {
   if (glviews.empty()) {
-    // GLUT initialization.
     int argc = 0;
-    glutInit(&argc, 0);
+    glutInit(&argc, 0);  // GLUT initialization.
   }
 
   // Window initialization.
@@ -20,8 +19,9 @@ GLView::GLView(const char* title) {
   glviews.push_back(this);
 
   // Set callbacks.
-  glutIdleFunc(idle_display);
+  glutDisplayFunc(display);
   glutReshapeFunc(reshape);
+  glutIdleFunc(idle_display);
 }
 
 void GLView::idle_display() {
