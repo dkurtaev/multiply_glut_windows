@@ -1,23 +1,17 @@
 #include <GL/freeglut.h>
 
 void display();
-void reshape(int width, int height);
 
 int main(int argc, char** argv) {
-  // GLUT initialization.
-  glutInit(&argc, argv);
+  glutInit(&argc, argv);  // GLUT initialization.
 
   // Window initialization.
   glutInitWindowSize(324, 324);  // Width, height of window.
   glutInitWindowPosition(0, 0);  // (x, y) position of window from top-left.
-  int window_id = glutCreateWindow("Single view");
+  glutCreateWindow("Single view");
+  glutDisplayFunc(display);  // Set callback.
 
-  // Set callbacks.
-  glutDisplayFunc(display);
-  glutReshapeFunc(reshape);
-
-  // Start GLUT's internal loop. Exit by window closing.
-  glutMainLoop();
+  glutMainLoop();  // Start GLUT's internal loop. Exit by window closing.
   return 0;
 }
 
@@ -32,8 +26,4 @@ void display() {
   glEnd();
 
   glutSwapBuffers();
-}
-
-void reshape(int width, int height) {
-  glViewport(0, 0, width, height);
 }
