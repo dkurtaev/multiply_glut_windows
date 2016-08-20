@@ -4,12 +4,8 @@ project(multi_glut)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-set(sources
-  src/main.cpp
-)
-
-set(headers
-)
+file(GLOB sources "./src/*.cpp")
+file(GLOB headers "./include/*.hpp")
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)

@@ -2,10 +2,6 @@
 
 void display_first();
 void display_second();
-void reshape(int width, int height);
-
-int first_window_id;
-int second_window_id;
 
 int main(int argc, char** argv) {
   glutInit(&argc, argv);  // GLUT initialization.
@@ -13,18 +9,16 @@ int main(int argc, char** argv) {
   // First window initialization.
   glutInitWindowSize(324, 324);  // Width, height of window.
   glutInitWindowPosition(0, 0);  // (x, y) position of window from top-left.
-  first_window_id = glutCreateWindow("First view");
+  glutCreateWindow("First view");
 
   glutDisplayFunc(display_first);
-  glutReshapeFunc(reshape);
 
   // Second window initialization.
   glutInitWindowSize(324, 324);
   glutInitWindowPosition(500, 0);
-  second_window_id = glutCreateWindow("Second view");
+  glutCreateWindow("Second view");
 
   glutDisplayFunc(display_second);
-  glutReshapeFunc(reshape);
 
   // Start GLUT's internal loop. Exit by one of windows is closing.
   glutMainLoop();
@@ -32,7 +26,6 @@ int main(int argc, char** argv) {
 }
 
 void display_first() {
-  glutSetWindow(first_window_id);
   glClear(GL_COLOR_BUFFER_BIT);
 
   glColor3ub(0xCA, 0xFF, 0xEE);
@@ -46,7 +39,6 @@ void display_first() {
 }
 
 void display_second() {
-  glutSetWindow(second_window_id);
   glClear(GL_COLOR_BUFFER_BIT);
 
   glColor3ub(0xCA, 0xFF, 0xEE);
@@ -57,8 +49,4 @@ void display_second() {
   glEnd();
 
   glutSwapBuffers();
-}
-
-void reshape(int width, int height) {
-  glViewport(0, 0, width, height);
 }
