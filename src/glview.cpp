@@ -24,12 +24,11 @@ GLView::GLView(const char* title, GLView* parent) {
   glviews.push_back(this);
 
   // Set callbacks.
-  glutDisplayFunc(idle_display);
+  glutDisplayFunc(display_all);
   glutReshapeFunc(reshape);
-  glutIdleFunc(idle_display);
 }
 
-void GLView::idle_display() {
+void GLView::display_all() {
   for (int i = 0; i < glviews.size(); ++i) {
     glutSetWindow(glviews[i]->window_id);
     glviews[i]->display();

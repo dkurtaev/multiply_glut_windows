@@ -7,7 +7,7 @@ class GLView {
  public:
    GLView(const char* title, GLView* parent = 0);
 
-   static void idle_display();
+   static void display_all();
 
    static void reshape(int width, int height);
 
