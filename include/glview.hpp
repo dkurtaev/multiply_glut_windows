@@ -9,8 +9,6 @@ class GLView {
 
    static void display_all();
 
-   static void reshape(int width, int height);
-
  protected:
    virtual void display() = 0;
 

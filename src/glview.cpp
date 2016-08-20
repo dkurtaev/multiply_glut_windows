@@ -23,9 +23,7 @@ GLView::GLView(const char* title, GLView* parent) {
   }
   glviews.push_back(this);
 
-  // Set callbacks.
-  glutDisplayFunc(display_all);
-  glutReshapeFunc(reshape);
+  glutDisplayFunc(display_all);  // Set callback.
 }
 
 void GLView::display_all() {
@@ -33,8 +31,4 @@ void GLView::display_all() {
     glutSetWindow(glviews[i]->window_id);
     glviews[i]->display();
   }
-}
-
-void GLView::reshape(int width, int height) {
-  glViewport(0, 0, width, height);
 }
