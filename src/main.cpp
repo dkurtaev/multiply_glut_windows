@@ -4,7 +4,7 @@
 
 class FirstView : public GLView {
  public:
-  FirstView() : GLView("First view") {}
+  FirstView(GLView* parent = 0) : GLView("First view", parent) {}
 
  protected:
    virtual void display() {
@@ -23,13 +23,14 @@ class FirstView : public GLView {
 
 class SecondView : public GLView {
  public:
-  SecondView() : GLView("Second view") {}
+  SecondView(GLView* parent = 0) : GLView("Second view", parent) {}
 
  protected:
    virtual void display() {
+     glClearColor(0.79f, 1.0f, 0.93f, 1.0f);
      glClear(GL_COLOR_BUFFER_BIT);
 
-     glColor3ub(0xCA, 0xFF, 0xEE);
+     glColor3ub(0, 0, 0);
      glBegin(GL_TRIANGLES);
        glVertex2f(0.0f, -0.5f);
        glVertex2f(0.5f, 0.5f);
@@ -42,7 +43,7 @@ class SecondView : public GLView {
 
 int main(int argc, char** argv) {
   FirstView first_view;
-  SecondView second_view;
+  SecondView second_view(&first_view);
 
   // Start GLUT's internal loop. Exit by one of windows is closing.
   glutMainLoop();

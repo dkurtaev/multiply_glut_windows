@@ -6,20 +6,25 @@
 
 std::vector<GLView*> GLView::glviews;
 
-GLView::GLView(const char* title) {
+GLView::GLView(const char* title, GLView* parent) {
   if (glviews.empty()) {
     int argc = 0;
     glutInit(&argc, 0);  // GLUT initialization.
   }
 
   // Window initialization.
-  glutInitWindowSize(324, 324);  // Width, height of window.
-  glutInitWindowPosition(0, 0);  // (x, y) position of window from top-left.
-  window_id = glutCreateWindow(title);
+  if (parent != 0) {
+    // Receive parent's id, x, y, width and height. Subwindows has not titles.
+    window_id = glutCreateSubWindow(parent->window_id, 0, 0, 128, 128);
+  } else {
+    glutInitWindowSize(324, 324);  // Width, height of window.
+    glutInitWindowPosition(0, 0);  // (x, y) position of window from top-left.
+    window_id = glutCreateWindow(title);
+  }
   glviews.push_back(this);
 
   // Set callbacks.
-  glutDisplayFunc(display);
+  glutDisplayFunc(idle_display);
   glutReshapeFunc(reshape);
   glutIdleFunc(idle_display);
 }

@@ -5,7 +5,7 @@
 
 class GLView {
  public:
-   GLView(const char* title);
+   GLView(const char* title, GLView* parent = 0);
 
    static void idle_display();
 
