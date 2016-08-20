@@ -17,7 +17,6 @@ int main(int argc, char** argv) {
 
   glutDisplayFunc(display_first);
   glutReshapeFunc(reshape);
-  glutIdleFunc(display_first);
 
   // Second window initialization.
   glutInitWindowSize(324, 324);
@@ -26,7 +25,6 @@ int main(int argc, char** argv) {
 
   glutDisplayFunc(display_second);
   glutReshapeFunc(reshape);
-  glutIdleFunc(display_second);
 
   // Start GLUT's internal loop. Exit by one of windows is closing.
   glutMainLoop();
