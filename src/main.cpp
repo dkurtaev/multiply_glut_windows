@@ -14,7 +14,6 @@ int main(int argc, char** argv) {
 
   // Set callbacks.
   glutDisplayFunc(display);
-  glutIdleFunc(display);
   glutReshapeFunc(reshape);
 
   // Start GLUT's internal loop. Exit by window closing.
