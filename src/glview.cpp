@@ -10,11 +10,9 @@ GLView::GLView(const char* title) {
   // Window initialization.
   glutInitWindowSize(324, 324);  // Width, height of window.
   glutInitWindowPosition(0, 0);  // (x, y) position of window from top-left.
-  int window_id = glutCreateWindow(title);
+  glutCreateWindow(title);
 
-  // Set callbacks.
-  glutDisplayFunc(display);
-  glutReshapeFunc(reshape);
+  glutDisplayFunc(display);  // Set callback.
 }
 
 void GLView::display() {
@@ -28,8 +26,4 @@ void GLView::display() {
   glEnd();
 
   glutSwapBuffers();
-}
-
-void GLView::reshape(int width, int height) {
-  glViewport(0, 0, width, height);
 }

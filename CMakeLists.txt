@@ -2,17 +2,10 @@ cmake_minimum_required(VERSION 2.8)
 
 project(multi_glut)
 
-set(CMAKE_CXX_COMPILER g++)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-set(sources
-  src/glview.cpp
-  src/main.cpp
-)
-
-set(headers
-  include/glview.hpp
-)
+file(GLOB sources "./src/*.cpp")
+file(GLOB headers "./include/*.hpp")
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)

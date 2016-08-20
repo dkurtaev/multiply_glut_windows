@@ -1,5 +1,5 @@
-#ifndef INCLUDE_GLVIEW_H_
-#define INCLUDE_GLVIEW_H_
+#ifndef INCLUDE_GLVIEW_HPP_
+#define INCLUDE_GLVIEW_HPP_
 
 class GLView {
  public:
@@ -7,8 +7,6 @@ class GLView {
 
  private:
    static void display();
-
-   static void reshape(int width, int height);
 };
 
-#endif  // INCLUDE_GLVIEW_H_
+#endif  // INCLUDE_GLVIEW_HPP_
