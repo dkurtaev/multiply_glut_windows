@@ -27,10 +27,9 @@ class SecondView : public GLView {
 
  protected:
    virtual void display() {
-     glClearColor(0.79f, 1.0f, 0.93f, 1.0f);
      glClear(GL_COLOR_BUFFER_BIT);
 
-     glColor3ub(0, 0, 0);
+     glColor3ub(0xCA, 0xFF, 0xEE);
      glBegin(GL_TRIANGLES);
        glVertex2f(0.0f, -0.5f);
        glVertex2f(0.5f, 0.5f);
