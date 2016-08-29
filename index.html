@@ -3,6 +3,7 @@
 
 <head>
   <title>DK: Multi GLUT</title>
+  <link rel="stylesheet" href="node_modules/octicons/build/font/octicons.css">
 </head>
 
 <body>
@@ -25,7 +26,13 @@
 &bull; <a href="#references">Useful links</a>
 
 <p>
-<h2 id="single_window">Single classic window</h2>
+
+<h2 id="single_window">
+  <a href="https://github.com/dkurtaev/multiply_glut_windows/tree/single_window" style="text-decoration:none;">
+    <span class="mega-octicon octicon-git-branch"></span>
+  </a>
+  Single classic window
+</h2>
 GLUT is a library for OpenGL.
 It provides windows manipulations: create, reshape, receive user's callbacks and
 display OpenGL's drawings stored in buffers.<br>
@@ -52,7 +59,12 @@ OS-like operations like hiding window's header or keep window always on top of
 other windows.
 </p>
 
-<h2 id="two_windows">Two classic windows</h2>
+<h2 id="two_windows">
+  <a href="https://github.com/dkurtaev/multiply_glut_windows/tree/two_windows" style="text-decoration:none;">
+    <span class="mega-octicon octicon-git-branch"></span>
+  </a>
+  Two classic windows
+</h2>
 <p>
 We initializing two windows sequently. For each write own display function.
 </p>
@@ -69,7 +81,12 @@ We initializing two windows sequently. For each write own display function.
 
 <img src="images/two_windows.png" alt="Two views"><br>
 
-<h2 id="single_glview">Single window as class object</h2>
+<h2 id="single_glview">
+  <a href="https://github.com/dkurtaev/multiply_glut_windows/tree/single_glview" style="text-decoration:none;">
+    <span class="mega-octicon octicon-git-branch"></span>
+  </a>
+  Single window as class object
+</h2>
 <p>
 Generally, problem is solved. But in future we may want to have more than two
 windows and with more harder callbacks logic. Let's try encapsulate window
@@ -103,7 +120,12 @@ callbacks.
   </td>
 </table>
 
-<h2 id="two_glviews">Abstract views manager</h2>
+<h2 id="two_glviews">
+  <a href="https://github.com/dkurtaev/multiply_glut_windows/tree/two_glviews" style="text-decoration:none;">
+    <span class="mega-octicon octicon-git-branch"></span>
+  </a>
+  Abstract views manager
+</h2>
 
 <p>
 We need to provide few windows management. Due to display function is static, it
@@ -152,7 +174,12 @@ For new window we implements class with own display.
   </td>
 </table>
 
-<h2 id="subwindows">GLUT subwindows</h2>
+<h2 id="subwindows">
+  <a href="https://github.com/dkurtaev/multiply_glut_windows/tree/subwindows" style="text-decoration:none;">
+    <span class="mega-octicon octicon-git-branch"></span>
+  </a>
+  GLUT subwindows
+</h2>
 <p>
 In addition let's try merge two windows inside single window. But each subwindow
 has own callbacks.<br>
